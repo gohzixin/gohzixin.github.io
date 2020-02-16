@@ -1,45 +1,283 @@
 <!doctype html>
-<html>
+<html lang="en">
+
+<!-- heading -->
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>About me!</title>
+	<title>About me!</title>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = " width=device-width, initial-scale = 1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="index.js"></script>
+	
+	
+<style>
+.header1{
+		position: fixed;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+	}
+
+.header{
+	background-image: url("https://i.pinimg.com/originals/33/28/63/332863fe41d069021ef209d3edc05e16.jpg");
+	padding: 60px;
+	text-align:center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: deeppink;
+	font-size: 20px;}
+
+h3 {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 30px;
+}
+
+footer {
+	font-size:30px;
+	display:flex;
+	justify-content: center;
+	background-color: MediumVioletRed;
+	margin: 0;
+	padding: 0;}
+
+footer h2{
+	font-family:"Lucida Console";
+	color: DarkSlateBlue;
+}
+
+p {
+	font-family:"Comic Sans MS", cursive, sans-serif;}
+
+.navbar-nav a:hover {
+	border-bottom: 3px solid red;
+}
+
+.loo a:hover{
+color: hotpink;
+}
+
+.snow-container {
+			  width: 100%;
+			  min-height: 100%;
+			  top: 0;
+			  bottom: 0;
+			  max-width: 100%;
+			  overflow: auto;
+			  z-index: 2;
+			  pointer-events: none;
+			}
+
+.snow {
+			  display: block;
+			  position: absolute;
+			  z-index: 2;
+			  top: 0;
+			  right: 0;
+			  bottom: 0;
+			  left: 0;
+			  pointer-events: none;
+			  -webkit-transform: translate3d(0, -100%, 0);
+			          transform: translate3d(0, -100%, 0);
+			  -webkit-animation: snow linear infinite;
+			          animation: snow linear infinite;
+			}
+			.snow.foreground {
+			  background-image: url("large-snow.png");
+			  -webkit-animation-duration: 30s;
+			          animation-duration: 30s;
+			}
+			.snow.foreground.layered {
+			  -webkit-animation-delay: 10s;
+			          animation-delay: 10s;
+			}
+
+.snow.middleground {
+			  background-image: image-url("large-snow.png");
+			  -webkit-animation-duration: 15s;
+			          animation-duration: 15s;
+			}
+			.snow.middleground.layered {
+			  -webkit-animation-delay: 4s;
+			          animation-delay: 4s;
+			}
+			.snow.background {
+			  background-image: image-url("large-snow.png");
+			  -webkit-animation-duration: 30s;
+			          animation-duration: 30s;
+			}
+			.snow.background.layered {
+			  -webkit-animation-delay: 15s;
+			          animation-delay: 15s;
+			}
+@-webkit-keyframes snow {
+			  0% {
+			    -webkit-transform: translate3d(0, -100%, 0);
+			            transform: translate3d(0, -100%, 0);
+			  }
+			  100% {
+			    -webkit-transform: translate3d(15%, 100%, 0);
+			            transform: translate3d(15%, 100%, 0);
+			  }
+			}
+
+			@keyframes snow {
+			  0% {
+			    -webkit-transform: translate3d(0, -100%, 0);
+			            transform: translate3d(0, -100%, 0);
+			  }
+			  100% {
+			    -webkit-transform: translate3d(15%, 100%, 0);
+			            transform: translate3d(15%, 100%, 0);
+			  }
+			}
+}
+
+.secheader{
+color : black;
+
+}
+
+.intro{
+color: black;
+margin: 0;
+padding: 0;
+}
+
+.coll{
+background-color:white;
+margin: 0;
+padding: 0;
+}
+
+</style>
 </head>
 
-<body>
+<body class="bg coll">
 
-<h1><b>
-Goh 
-</b></h1>
-<h2>Pick 1</h2>
-<ul>
-<li><a href="#About me">About me</a></li>
-<li><a href="#College">College</a></li>
-<li><a href="#Hobbies">Hobbies</a></li>
-<li><a href="#Family">My Family</a></li>
-</ul>
-
-<div style="background-color:lightblue">
-<h3><u><a name="About me">About me</a></u></h3>
-
-<p> Below is my Instagram account and Facebook account. </p>
-<a href="https://www.instagram.com/zzi_xxin/" target="_blank">my Instagram</a><br>
-<a href="https://www.facebook.com/zixin.loveanimals" target="_blank">my Facebook</a><br>
+<div class="snow-container">
+			  <div class="snow foreground"></div>
+			  <div class="snow foreground layered"></div>
+			  <div class="snow middleground"></div>
+			  <div class="snow middleground layered"></div>
+			  <div class="snow background"></div>
+			  <div class="snow background layered"></div>
 </div>
 
-<div style="background-color:pink">
-<h3><u><a name="College">My College</a></u></h3>
-<p><a href="http://www.ws.cuhk.edu.hk/" target="_blank">Lee Woo Sing college</a></p><br>
+<header>
+
+	<div class="header1 progress">
+	<div class="progress-bar progress-bar-striped" id="myBar" style="width:0%">0%</div>
+	</div>
+	<div class= "header">	
+	<h1 style="font-size:50px;"> Goh Zi Xin </h1>
+	<p style="font-size:30px;"> Statistics </p>
+</div>
+</header>
+
+
+
+<!-- Flex/Grid -->
+<div class="row align-items-center ">
+	<div class="col bg-success text-light text-center"><h2>made in</h2></div>
+  	<div class="col bg-warning text-light text-center"><h2>23</h2></div>
+  	<div class="col bg-success text-light text-center"><h2>JAN</h2></div> 
+  	<div class="col bg-warning text-light text-center"><h2>1999</h2></div> 
 </div>
 
-<div style="background-color:orange">
-<h3><u><a name="Hobbies">My Hobbies</a></u></h3>
 
+
+<!-- nav -->
+<nav class="after navbar navbar-expand-sm bg-light justify-content-center">
+	<a class="text nav-link text-info" href="https://www.facebook.com/zixin.loveanimals" target="_blank">my Facebook </a>
+	<a class="text nav-link text-info" href="https://www.instagram.com/zzi_xxin/" target="_blank">my Instagram </a>
+	<a class="text nav-link text-info" href="https://www.sta.cuhk.edu.hk/default.aspx" target="_blank">my Major </a> 
+	<a class="text nav-link text-info" href="http://www.ws.cuhk.edu.hk/" target="_blank">my College</a> 
+	<a class="nav-link text-danger specialbtn" href="#">Special!!!</a> 
+</nav>
+
+<nav class="hiddennav navbar navbar-expand-sm justify-content-center bg-light navbar-light">
+  <ul class="navbar-nav">
+		    <li class="nav-item">
+		      <a class="nav-link task1" href="#">Task 1: Align</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link task2" href="#">Task 2: New Hobby</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link task3" href="#">Task 3: Scroll</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link task4" href="#">Task 4: Bonus</a>
+		    </li>
+		  </ul>
+		</nav>
+
+<!-- Table -->
+	<h2 class="coll"><u><a id="top">Pick 1</a></u></h2>
+<div class="container">
+<table class="table table-hover table-bordered">
+
+<tr style="font-size:20px;" class="well table-danger ">
+	<td><a class="tab text-danger " href="#About me"><h3>About me</h3></a></td>
+	<td><a class="tab text-danger" href="#College"><h3>College</h3></a></td>
+</tr>
+<tr style="font-size:20px;" class="well table-danger">
+	<td><a class="tab text-danger" href="#Hobbies"><h3>Hobbies</h3></a></td>
+	<td><a class="tab text-danger" href="#Family"><h3>My Family</h3></a></td>
+
+</tr>
+</table>
 </div>
 
-<div style="background-color:violet">
-<h3><u><a name="Family">My Family</a></u></h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Smiley_Face.JPG" alt="smiley face" width="320" height="240">
-</div>
+<!-- Image&Section -->
+
+<section class="change bg-warning text-center" id="About me">
+	<h3 class="secheader"><u><b>
+	About me
+	</b></u></h3>
+	<img src="https://scontent-atl3-1.cdninstagram.com/v/t51.2885-19/80856996_108069480631126_7230823484312518656_n.jpg?_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_ohc=Eb_VMXAO8NMAX8n_BMa&oh=f9972c677c6198f756131728a47e1e15&oe=5EBBDE09" width="240" height="240">
+	<p class="intro"> My name is Goh Zi Xin, from Malaysia. I am a year 2 student, majoring in Statistics.  </p>
+</section>
+
+
+<section class="coll text-center" id="College">
+	<h3 class="secheader"><u><b>My College</b></u></h3>
+	<p> I am from Lee Woo Sing college. If you are interested in my college, find the link above to my college's website !</p>
+	<p> Why choose Lee Woo Sing college ? </p>
+	<ul>
+	<li> They are new ! </li>
+	<li> We have our own mini fridge in our room ! </li>
+	</ul>
+	<img src="http://studyoverseas.soton.ac.uk/wp-content/blogs.dir/sites/10/2018/08/2014120212333237.jpg" width="240" height="240">
+</section>
+
+<section class="change bg-warning text-center" id="Hobbies">
+	<h3 class="secheader"><u><b>My Hobbies</b></u></h3>
+	<!-- List -->
+<ul class="list-group">
+	  <li class="lis list-group-item list-group-item-warning">Playing badminton </li>
+	  <li class="lis list-group-item list-group-item-warning">Watching drama </li>
+	</ul>
+	<img src="https://i.pinimg.com/236x/5b/a2/df/5ba2df0c9dc6077c3991c5a7baba8cdd--stick-man-painted-ornaments.jpg" width="240" height="240">
+</section>
+
+<section class="coll text-center" id="Family">
+	<h3 class="secheader"><u>My Family</u></h3>
+	<img src="https://i.pinimg.com/originals/50/c4/ba/50c4ba04a12c9d083697eb90087b5d36.jpg" alt="smiley face" width="320" height="240">
+	<p>OOPs ! <b style="font-size:20px;">Privacy</b> xD </p>
+	
+</section>
+
+
+<a class="loo" href="#top" style="color:black;" ><u> Back to top </u></a>
+
+
+<!-- footer -->
+<footer>
+	<h2>End</h2>
+</footer>
+
 
 </body>
 </html>
