@@ -25,7 +25,7 @@ $(document).ready(function(){
 	});
 	
 	$(".task4").click(function(){
-		alert("Congratuliations!");
+		alert("Please enjoy the snowy dark mode of my website! ");
 		$(".snow-container").show();
                 $(".header").css('background-image', 'url(https://static.myfbcover.com/covers/Nature/Black_Flower.png');
 		 $(".header").css('color', 'white');
